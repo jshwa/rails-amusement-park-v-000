@@ -11,15 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171223201337) do
-
-  create_table "attractions", force: :cascade do |t|
-    t.string  "name"
-    t.integer "min_height"
-    t.integer "nausea_rating"
-    t.integer "happiness_rating"
-    t.integer "ticket_number"
-  end
+ActiveRecord::Schema.define(version: 20171223195320) do
 
   create_table "rides", force: :cascade do |t|
     t.integer "user_id"
