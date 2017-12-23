@@ -6,5 +6,6 @@ class CreateAttractions < ActiveRecord::Migration
       t.integer :nausea_rating,
       t.integer :happiness_rating
       t.integer :ticket_number
+    end
   end
 end
