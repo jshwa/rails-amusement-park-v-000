@@ -14,8 +14,9 @@ class Ride < ActiveRecord::Base
         "Sorry. You are not tall enough to ride the #{attraction.name}."
     else
       user.tickets -= attraction.tickets
-      user.nausea = user.nausea + attraction.nausea_rating
-      user.happiness = attraction.happiness_rating
+      user.nausea += attraction.nausea_rating
+      user.happiness += attraction.happiness_rating
+      user.save
     end
   end
 end
