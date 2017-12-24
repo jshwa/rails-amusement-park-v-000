@@ -11,3 +11,5 @@ Tickets: <%= @attraction.tickets %>
   <%= hidden_field_tag 'attraction_id', @attraction.id %>
   <%= submit_tag "Go on this ride" %>
 <% end %>
+
+<%= link_to "Edit Attraction", attraction_edit_path if @current_user.admin == true %>
