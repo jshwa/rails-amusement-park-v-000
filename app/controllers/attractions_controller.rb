@@ -42,6 +42,7 @@ class AttractionsController < ApplicationController
     if current_user.admin == true
       @attraction = Attraction.find_by(id: params[:id])
       @attraction.update(attraction_params)
+      redirect_to attraction_path(attraction)
     else
       redirect_to attractions_path
     end
