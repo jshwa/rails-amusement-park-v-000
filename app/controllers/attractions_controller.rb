@@ -18,7 +18,12 @@ class AttractionsController < ApplicationController
 
   def create
     if current_user.admin == true
-      
+      attraction = Attraction.new(attraction_params)
+      if attraction.save
+        redirect_to attraction_path(attraction)
+      else
+        redirect_to: attraction_new_path
+      end
     else
       redirect_to attractions_path
     end
