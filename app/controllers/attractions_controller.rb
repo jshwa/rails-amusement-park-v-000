@@ -38,6 +38,14 @@ class AttractionsController < ApplicationController
     end
   end
 
+  def update
+    if current_user.admin == true
+      @attraction = Attraction.find_by(id: params[:id])
+      @attraction.update(attraction_params)
+    else
+      redirect_to attractions_path
+    end
+  end
 
   def take_ride
     if logged_in?
