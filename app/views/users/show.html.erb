@@ -1,0 +1,14 @@
+
+<%= flash[:notice] %>
+
+<h1><%= @user.name %><%= " - ADMIN" if @user.admin%></h1>
+
+<ul>
+  <li>Mood: <%= @user.mood %></li>
+  <li>Happiness: <%= @user.happiness %></li>
+  <li>Nausea: <%= @user.nausea %></li>
+  <li>Height: <%= @user.height %></li>
+  <li>Tickets: <%= @user.tickets %></li>
+</ul>
+
+<%= link_to "Log Out", signout_path %>
