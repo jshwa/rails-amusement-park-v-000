@@ -16,6 +16,6 @@ class SessionsController < ApplicationController
   end
 
   def logged_in?
-    
+    !!current_user
   end
 end
