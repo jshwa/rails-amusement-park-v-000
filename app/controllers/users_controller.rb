@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :new_user, only: [:new, :signin]
 
   def index
-    @users = users.all
+    @users = User.all
   end
 
   def create
