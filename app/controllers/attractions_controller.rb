@@ -18,7 +18,7 @@ class AttractionsController < ApplicationController
   def take_ride
     if logged_in?
       @attraction = Attraction.find_by(id: params[:attraction_id])
-      take_ride
+      Ride.take_ride
       redirect_to user_path(@current_user)
     end
   end
