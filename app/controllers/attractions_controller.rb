@@ -17,7 +17,11 @@ class AttractionsController < ApplicationController
   end
 
   def create
-
+    if current_user.admin == true
+      
+    else
+      redirect_to attractions_path
+    end
   end
 
   def take_ride
@@ -31,6 +35,6 @@ class AttractionsController < ApplicationController
   private
 
   def attraction_params
-    params.require(:attraction).permit(:name)
+    params.require(:attraction).permit(:name, :min_height, :nausea_rating, :happiness_rating, :tickets)
   end
 end
