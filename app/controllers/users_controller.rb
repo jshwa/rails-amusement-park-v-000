@@ -6,14 +6,6 @@ class UsersController < ApplicationController
     @users = users.all
   end
 
-  def new
-    @user = User.new
-  end
-
-  def signin
-    @user = User.new
-  end
-
   def create
     user = User.new(user_params)
 
