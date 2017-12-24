@@ -7,7 +7,6 @@ class AttractionsController < ApplicationController
 
   def show
     current_user
-    @attraction = Attraction.find_by(id: params[:id])
   end
 
   def new
@@ -33,7 +32,6 @@ class AttractionsController < ApplicationController
 
   def edit
     if current_user.admin == true
-      @attraction = Attraction.find_by(id: params[:id])
     else
       redirect_to attractions_path
     end
@@ -41,7 +39,6 @@ class AttractionsController < ApplicationController
 
   def update
     if current_user.admin == true
-      @attraction = Attraction.find_by(id: params[:id])
       @attraction.update(attraction_params)
       redirect_to attraction_path(@attraction)
     else
