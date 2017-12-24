@@ -1,7 +1,7 @@
 class AttractionsController < ApplicationController
   def index
     current_user
-    @attractions = Attraction.all      
+    @attractions = Attraction.all
   end
 
   def show
