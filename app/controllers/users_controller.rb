@@ -29,4 +29,8 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find_by(id: params[:id])
   end
+
+  def new_user
+    @user = User.new
+  end
 end
