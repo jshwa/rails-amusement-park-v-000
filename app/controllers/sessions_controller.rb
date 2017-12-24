@@ -6,6 +6,6 @@ class SessionsController < ApplicationController
       redirect_to user_path(user)
     else
       render '/users/login'
-
+    end
   end
 end
