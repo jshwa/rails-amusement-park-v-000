@@ -19,8 +19,8 @@ class AttractionsController < ApplicationController
     if logged_in?
       ride = Ride.create(user_id: current_user.id, attraction_id: params[:attraction_id])
       @attraction = Attraction.find_by(id: params[:attraction_id])
-      ride.take_ride
-      redirect_to user_path(@current_user), notice: "Thanks for riding the #{@attraction.name}"
+      flash[:notice] = ride.take_ride
+      redirect_to user_path(@current_user)
     end
   end
 
