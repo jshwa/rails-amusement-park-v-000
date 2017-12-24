@@ -30,6 +30,15 @@ class AttractionsController < ApplicationController
     end
   end
 
+  def edit
+    if current_user.admin == true
+      @attraction = Attraction.find_by(id: params[:id])
+    else
+      redirect_to attractions_path
+    end
+  end
+
+
   def take_ride
     if logged_in?
       ride = Ride.create(user_id: current_user.id, attraction_id: params[:attraction_id])
