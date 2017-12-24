@@ -22,7 +22,7 @@ class AttractionsController < ApplicationController
       if attraction.save
         redirect_to attraction_path(attraction)
       else
-        redirect_to: attraction_new_path
+        redirect_to attraction_new_path
       end
     else
       redirect_to attractions_path
