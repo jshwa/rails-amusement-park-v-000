@@ -9,7 +9,11 @@ class AttractionsController < ApplicationController
   end
 
   def new
-    @attraction = Attraction.new
+    if current_user.admin == true
+      @attraction = Attraction.new
+    else
+      redirect_to attractions_path
+    end
   end
 
   def create
