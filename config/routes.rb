@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'login' => 'sessions#create', as: :login 
+  get 'signin' => 'sessions#create', as: :signin 
 
   root 'application#home'
   resources :users
