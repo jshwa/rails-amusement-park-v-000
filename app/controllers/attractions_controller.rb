@@ -15,6 +15,11 @@ class AttractionsController < ApplicationController
 
   end
 
+  def take_ride
+    @attraction = Attraction.find_by(id: params[:attraction_id])
+    take_ride
+  end
+
   private
 
   def attraction_params
