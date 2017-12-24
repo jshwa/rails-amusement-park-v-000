@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    
+    User.create(user_params)
   end
 
   def show
