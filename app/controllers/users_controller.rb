@@ -5,8 +5,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    User.create(user_params)
-    redirect_to '/'
+    user = User.create(user_params)
+    redirect_to 'user_path(user)'
   end
 
   def show
