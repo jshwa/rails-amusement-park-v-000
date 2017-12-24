@@ -31,10 +31,7 @@ class AttractionsController < ApplicationController
   end
 
   def edit
-    if current_user.admin == true
-    else
-      redirect_to attractions_path
-    end
+    redirect_to attractions_path if current_user.admin == false
   end
 
   def update
